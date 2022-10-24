@@ -1,0 +1,61 @@
+/**
+ * :root es una forma de crear variables en css y a esta variables asignarles colores.
+ * La ventaja es que si realizo un cambio, se cambiaran todos los estilos en los que declare el nombre.
+ * Para utilizar estas variables, se debe escribir var() y dentro de los parentesis el nombre junto con los guiones --.
+ */
+:root {
+    --white: #fafafb;
+    --purple: #9a67ea;
+    --blue-light: #04d4c3;
+}
+
+/**
+ * linear-gradient() es una propiedad para crear un degradado de forma manual.
+ * Como parametro se debe indicar desde que posicion comenzara a degradarse y luego los colores que se utilizaran.
+ * 100vh es el tamaño en que se vera el degradado, para este caso, sera el 100% del Viewport Height.
+ * Se declara la fuente que esta siendo llamada desde google fonts.
+ */
+body {
+    background: linear-gradient(to bottom, var(--purple), var(--blue-light));
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 50px;
+}
+
+/**
+ * Estilos para el contenedor principal.
+ * Se agrega un max-width del 80% para que se autoajuste a pantallas moviles.
+ */
+.container {
+    background-color: var(--white);
+    max-width: 80%; 
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/**
+ * Se agregan estilos a la seccion de fecha, para diferenciar entre el dia y la fecha completa.
+ */
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#dia {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+}
+#fecha {
+    text-align: right;
+    font-size: 14px;
+}
+
+/**
+ * Se crea una nueva regla de estilos para la clase alert de bootstrap para redefinir los padding.
+ * quedando con 10px en izquierda y derecha y con 4px arriba y abajo.
+ */
+.alert {
+    padding: 4px 10px;
+}

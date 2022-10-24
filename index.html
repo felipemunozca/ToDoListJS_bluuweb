@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icono de la pagina -->
+    <link rel="shortcut icon" href="./assets/img/lista.png">
+
+    <!-- Se agrega la fuente Roboto de google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- Se utilizara bootstrap para facilitar la creacion de estilos css. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Se agregan los iconos de font-awesome. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+
+    <!-- Estilos propios de CSS. -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- DATO IMPORTATE: para sacar el menu de EMOJI se puede hacer presionando las teclas WINDOWS + . (PUNTO) -->
+    <title>Lista de Tareas ✍</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="date">
+            <p id="dia"></p>
+            <p id="fecha"></p>
+        </div>
+        
+        <h1 class="text-center my-4">Lista de Tareas</h1>
+        <form id="formulario">
+            <input type="text" class="form-control" id="input" placeholder="Ingrese tarea...">
+            <button type="submit" class="btn btn-primary btn-block mt-2">Agregar</button>
+        </form>
+        
+        <div id="lista-tareas" class="mt-4">
+
+        </div>
+
+        <!-- 
+            * El template es una plantilla o esqueleto, que se utiliza para secciones en las que se debe repetir una cierta porción de código.
+            * Al crear una etiqueta template, esta no se renderiza en el navegador de forma automática.
+            * Como REGLA IMPORTANTE es que todos los templates deben tener id únicos.
+            * La clase alert-secondary se utiliza para darle un color de fondo al div con la tarea.
+            * La clase d-flex permite alinear todo el contenido de la etiqueta de forma vertical.
+            * La clase justify-content-between justifica el espaciado entre la etiqueta <p> y <h3> y envía el contenido a las orillas.
+            * La clase align-items-center alinea los items del div de forma vertical para que queden a la misma altura.
+            * Se resetean los márgenes tanto de la etiqueta <p> y <h3> a cero con la clase m-0.
+            * Para que los iconos de la etiqueta <i> se vean mas grandes, se pueden utilizar las propiedades de bootstrap agregando las etiquetas
+            dentro de otra, la cual pasaría a ser su padre, y puede tomar sus estilos, en este caso la etiqueta <h3>.
+            * Si se agrega el rol de botón a las etiquetas <i>, aparecerá la manito al posicionar el mouse sobre alguno de los iconos.
+        -->
+        <template id="template-tareas">
+            <div class="alert alert-secondary d-flex justify-content-between align-items-center">
+                <p class="m-0">Tarea 1</p>
+                <h3 class="m-0">
+                    <i class="fas fa-check-circle text-success" role="button"></i>
+                    <i class="fas fa-minus-circle text-danger" role="button"></i>
+                </h3>
+            </div>
+        </template>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
